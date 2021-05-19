@@ -5,17 +5,13 @@
  */
 package it.amrito.love.calculator.controllers;
 
-import it.amrito.love.calculator.dto.RegistrationDto;
-import it.amrito.love.calculator.dto.UserInfoDto;
+import it.amrito.love.calculator.api.UserInfoDto;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
@@ -53,17 +49,5 @@ public class LcController {
         
         return "result";
     }
-    
-    @RequestMapping("/register")
-    public String processRegistration(@ModelAttribute("registrationUserDto") RegistrationDto user){
-        
-        return "registration";
-    }
-    
-    @RequestMapping("/save-registration")
-    public String saveRegistration(@ModelAttribute("registrationUserDto") RegistrationDto user){
-        
-        return "registration-result";
-    }
-            
+
 }

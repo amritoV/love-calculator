@@ -36,7 +36,7 @@
                 </form:select>
             </p>
             <p>
-                <label>hobby:</label>
+                <label>hobbys:</label>
                 Calcio: <form:checkbox path="hobby" value="calcio"/>
                 Leggere: <form:checkbox path="hobby" value="leggere"/>
                 Nuotare: <form:checkbox path="hobby" value="Nuotare"/>
@@ -46,6 +46,17 @@
                 Male: <form:radiobutton path="gender" value="male"/>
                 Female: <form:radiobutton path="gender" value="female"/>
                 Other: <form:radiobutton path="gender" value="other"/>
+            </p>
+            <p>
+                <label for="age">Age:</label>
+                <form:input path="age" id="age"/>
+            </p>
+            <p>
+                <h3>Insert your Communication Details:</h3>
+                <label for="email">Email:</label>
+                <form:input id="email" path="communicationDto.email"/>
+                <label for="phone">Phone:</label>
+                <form:input id="phone" path="communicationDto.phone"/>
             </p>
             
             <input type="submit" value="send">

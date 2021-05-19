@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package it.amrito.love.calculator.dto;
+package it.amrito.love.calculator.api;
 
 import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotEmpty;

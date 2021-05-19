@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package it.amrito.love.calculator.dto;
+package it.amrito.love.calculator.api;
 
 import java.util.List;
 
@@ -25,6 +25,12 @@ public class RegistrationDto {
     private List<String> hobby;
     
     private String gender;
+
+    private Integer age;
+
+    private CommunicationDto communicationDto;
+
+//***Getters and Setters**
 
     public String getName() {
         return name;
@@ -73,7 +79,22 @@ public class RegistrationDto {
     public void setGender(String gender) {
         this.gender = gender;
     }
-    
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public CommunicationDto getCommunicationDto() {
+        return communicationDto;
+    }
+
+    public void setCommunicationDto(CommunicationDto communicationDto) {
+        this.communicationDto = communicationDto;
+    }
     
 
     @Override

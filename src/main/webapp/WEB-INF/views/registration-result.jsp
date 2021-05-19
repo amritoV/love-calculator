@@ -22,6 +22,12 @@
             country: ${registrationUserDto.country}<br>
             hobbies: ${registrationUserDto.hobby} <br>
             gender: ${registrationUserDto.gender}<br>
+            age: ${registrationUserDto.age}<br>
+        </p>
+        <p>
+            <h3>Coomunication Details:</h3>
+            email: ${registrationUserDto.communicationDto.email}<br>
+            telephone: ${registrationUserDto.communicationDto.phone}
         </p>
     </body>
 </html>
