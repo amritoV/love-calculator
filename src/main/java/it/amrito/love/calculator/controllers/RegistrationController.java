@@ -42,7 +42,9 @@ public class RegistrationController {
     @RequestMapping(value= "/save-registration", method = RequestMethod.POST)
     public String saveRegistration(@Valid @ModelAttribute("registrationUserDto") RegistrationDto user, BindingResult result){
         System.out.println("inside RegistrationController.saveRegistration");
-        registrationDtoValidator.validate(user, result);
+        
+        //registrationDtoValidator.validate(user, result);
+      
         if(result.hasErrors()){
             List<ObjectError> errors=result.getAllErrors();
             errors.forEach(System.out::println);
@@ -65,7 +67,7 @@ public class RegistrationController {
         
         binder.registerCustomEditor(String.class,"name", namePropertyEditor);
         
-       // binder.addValidators(new CustomSpringRegistrationDtoValidator());
+        binder.addValidators(new CustomSpringRegistrationDtoValidator());
         
     }
 
