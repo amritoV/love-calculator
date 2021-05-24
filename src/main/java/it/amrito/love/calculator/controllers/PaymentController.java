@@ -3,8 +3,10 @@ package it.amrito.love.calculator.controllers;
 import it.amrito.love.calculator.api.BillDto;
 import it.amrito.love.calculator.api.CreditCard;
 import it.amrito.love.calculator.propertyeditor.CreditCardPropertyEditor;
+import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 
 
@@ -38,8 +40,9 @@ public class PaymentController {
     
     
     @PostMapping("/process")
-    public String processPayment(@ModelAttribute("paymentInfo")BillDto billDto){
+    public String processPayment(@Valid @ModelAttribute("paymentInfo")BillDto billDto, BindingResult result){
         
+        if(result.hasErrors()) return "payment";
         
         return "payment-processed";
     }
@@ -50,7 +53,7 @@ public class PaymentController {
         
         CreditCardPropertyEditor credidCardPE=new CreditCardPropertyEditor();
         
-        binder.registerCustomEditor(CreditCard.class,"creditCard",credidCardPE);
+        //binder.registerCustomEditor(CreditCard.class,"creditCard",credidCardPE);
         
     }
 }

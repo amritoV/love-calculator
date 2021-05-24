@@ -5,9 +5,13 @@
  */
 package it.amrito.love.calculator.config;
 
+import it.amrito.love.calculator.api.CreditCard;
+import it.amrito.love.calculator.converters.FromCreditcardToStringConverter;
+import it.amrito.love.calculator.converters.FromStringToCreditcardConverter;
 import it.amrito.love.calculator.formatter.AmountFormatter;
 import it.amrito.love.calculator.formatter.CreditCardFormatter;
 import it.amrito.love.calculator.formatter.PhoneFormatter;
+import it.amrito.love.calculator.propertyeditor.CcConverter;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -15,6 +19,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.validation.Validator;
 
@@ -71,6 +76,12 @@ public class WebAppContext implements WebMvcConfigurer {
         registry.addFormatter(new PhoneFormatter());
         //registry.addFormatter(new CreditCardFormatter()); 
         registry.addFormatter(new AmountFormatter()); 
+        registry.addConverter(new FromStringToCreditcardConverter());
+        //registry.addConverter(new FromCreditcardToStringConverter());
+        //Converter<CreditCard,String> cc= x->x.toString() +"lambda";
+        CcConverter cc=x->x.toString() +"lambdaConverter";
+        registry.addConverter(cc);
+        
 
     }
     
