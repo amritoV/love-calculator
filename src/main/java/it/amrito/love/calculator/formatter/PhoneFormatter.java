@@ -17,7 +17,7 @@ public class PhoneFormatter implements Formatter<Phone> {
 
         int index = stringPhone.indexOf('-');
         if(index == -1){
-            phone.setCountryCode("+39");
+            phone.setCountryCode("39");
             phone.setUserNumber(arrayPhone[0]);
         }
         else{

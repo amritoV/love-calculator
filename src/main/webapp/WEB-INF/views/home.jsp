@@ -43,7 +43,7 @@
         <h1 align="center">Love calculator</h1>
         <div align="center"><a href="${pageContext.request.contextPath}/register">registrate</a></div>
         <br/>
-        <div align="center"><a href="${pageContext.request.contextPath}/pay">make a donation</a></div>
+        <div align="center"><a href="${pageContext.request.contextPath}/payment">make a donation</a></div>
         <hr>
 
 

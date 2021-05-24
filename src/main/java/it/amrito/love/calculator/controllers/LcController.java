@@ -6,7 +6,13 @@
 package it.amrito.love.calculator.controllers;
 
 import it.amrito.love.calculator.api.UserInfoDto;
+import java.util.Locale;
+import java.util.Set;
 import javax.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.MessageSource;
+import org.springframework.context.support.ResourceBundleMessageSource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -23,7 +29,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class LcController {
     
     
-    
+    @Autowired
+    ResourceBundleMessageSource rbms;
     
     @ResponseBody
     @RequestMapping("/test")
@@ -35,8 +42,9 @@ public class LcController {
     
     @RequestMapping({"","/","/index","/home"})
     public String getHome(@ModelAttribute("userInfo") UserInfoDto userInfo1){
-        
-        
+        String mess=rbms.getMessage("age.error", null,Locale.ENGLISH);
+        System.out.println(mess);
+
         return "home";
     }
     

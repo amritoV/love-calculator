@@ -6,6 +6,12 @@
 package it.amrito.love.calculator.api;
 
 import java.util.List;
+import it.amrito.love.calculator.validators.AgeValidator;
+import it.amrito.love.calculator.validators.PhoneValidator;
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
  *
@@ -13,7 +19,7 @@ import java.util.List;
  */
 public class RegistrationDto {
     
-    
+    @NotEmpty
     private String name;
     
     private String userName;
@@ -25,9 +31,11 @@ public class RegistrationDto {
     private List<String> hobby;
     
     private String gender;
-
+    
+    @AgeValidator(lower = 22, upper = 62)
     private Integer age;
-
+    
+    @Valid  //using @Valid to trigger @PhoneValidator in CommuicationDto, on field phone
     private CommunicationDto communicationDto;
 
 //***Getters and Setters**

@@ -11,7 +11,20 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registration</title>
+        <style type="text/css">
+            .error{
+                color: red;
+                position : fixed;
+                text-align: left;
+                margin-left: 30px;
+            }
+        </style>
+        
+        
+        
     </head>
+    
+    
     <body>
         <h1>Love calculator</h1>
         <br>
@@ -50,6 +63,7 @@
             <p>
                 <label for="age">Age:</label>
                 <form:input path="age" id="age"/>
+                <form:errors path="age" cssClass="error"/>
             </p>
             <p>
                 <h3>Insert your Communication Details:</h3>
@@ -57,6 +71,7 @@
                 <form:input id="email" path="communicationDto.email"/>
                 <label for="phone">Phone:</label>
                 <form:input id="phone" path="communicationDto.phone"/>
+                <form:errors path="communicationDto.phone" cssClass="error" />
             </p>
             
             <input type="submit" value="send">

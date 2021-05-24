@@ -1,10 +1,15 @@
 package it.amrito.love.calculator.api;
 
+import it.amrito.love.calculator.validators.PhoneValidator;
+import javax.validation.Valid;
+
+
 public class CommunicationDto {
 
 
     private String email;
-
+    
+    @PhoneValidator
     private Phone phone;
 
     public String getEmail() {
