@@ -12,13 +12,14 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1 align="center">Love Calculator</h1>
+        <h1 align="center">Love Calculator</h1><br>
+        <div align="center"> <a href="${pageContext.request.contextPath}/email-home">Send the result via email</a></div>
         <hr>
-        <p>
-            UserName is: ${userInfo.userName}
-        </p>
-        <p>
-            CrushName is: ${userInfo.crushName}
+        <h2> HI ...</h2><br>
+        <h2 align="center">Love Calculator Result: </h2>
+        <p align="center">
+            ${userInfo.userName} and ${userInfo.crushName} are:<br>
+            FRIENDS
         </p>
     </body>
 </html>

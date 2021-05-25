@@ -19,7 +19,7 @@ import javax.validation.constraints.NotNull;
  */
 public class RegistrationDto {
     
-    @NotEmpty(message ="name can not be empty")
+    @NotEmpty(message ="{registrationdto.name.empty}")
     private String name;
     
     private String userName;

@@ -5,6 +5,7 @@ import it.amrito.love.calculator.api.CommunicationDto;
 import it.amrito.love.calculator.api.Phone;
 import it.amrito.love.calculator.api.RegistrationDto;
 import it.amrito.love.calculator.propertyeditor.NamePropertyEditor;
+import it.amrito.love.calculator.validators.CustomSpringCommunicationDtoValidator;
 import it.amrito.love.calculator.validators.CustomSpringRegistrationDtoValidator;
 import java.util.List;
 import javax.validation.Valid;
@@ -24,8 +25,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class RegistrationController {
     
-    @Autowired
-    CustomSpringRegistrationDtoValidator registrationDtoValidator;
+   // @Autowired
+    //CustomSpringRegistrationDtoValidator registrationDtoValidator;
 
     @RequestMapping("/register")
     public String processRegistration(@ModelAttribute("registrationUserDto") RegistrationDto user){
@@ -68,6 +69,7 @@ public class RegistrationController {
         binder.registerCustomEditor(String.class,"name", namePropertyEditor);
         
         binder.addValidators(new CustomSpringRegistrationDtoValidator());
+        binder.addValidators(new CustomSpringCommunicationDtoValidator());
         
     }
 

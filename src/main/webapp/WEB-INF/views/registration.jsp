@@ -71,6 +71,7 @@
                 <h3>Insert your Communication Details:</h3>
                 <label for="email">Email:</label>
                 <form:input id="email" path="communicationDto.email"/>
+                <form:errors path="communicationDto.email" cssClass="error"/><br>
                 <label for="phone">Phone:</label>
                 <form:input id="phone" path="communicationDto.phone"/>
                 <form:errors path="communicationDto.phone" cssClass="error" />

@@ -16,8 +16,8 @@ import javax.validation.constraints.Size;
 public class UserInfoDto {
     
     
-    @NotEmpty(message ="* userName can not be empty")
-    @Size(min = 3, max = 15, message="* username should have char between 3-15")
+    @NotEmpty(message ="{userinfodto.name.empty}")
+    @Size(min = 3, max = 15, message="{userinfodto.name.invalid}")
     private String userName;
     
     @NotEmpty(message ="* crushName can not be empty")
